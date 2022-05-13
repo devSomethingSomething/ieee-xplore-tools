@@ -18,6 +18,8 @@ namespace AuthorCounter
 
             WriteResultsToFile();
 
+            WriteDoneMessage();
+
             Console.ReadKey(true);
         }
 
@@ -45,6 +47,15 @@ namespace AuthorCounter
             {
                 streamWriter.WriteLine(CountAuthors(line, ';'));
             }
+        }
+
+        private static void WriteDoneMessage()
+        {
+            Console.ForegroundColor = ConsoleColor.Green;
+
+            Console.WriteLine("Done");
+
+            Console.ResetColor();
         }
     }
 }
