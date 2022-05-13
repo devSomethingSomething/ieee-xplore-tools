@@ -1,12 +1,18 @@
 ﻿using System;
+using System.Linq;
 
 namespace AuthorCounter
 {
-    class Program
+    public class Program
     {
-        static void Main(string[] args)
+        private static void Main()
         {
-            Console.WriteLine("Hello World!");
+            Console.ReadKey(true);
+        }
+
+        private static int CountAuthors(string authorList, char charToCount)
+        {
+            return authorList.Count(c => c == charToCount) + 1;
         }
     }
 }
