@@ -62,7 +62,7 @@ namespace IeeeXploreScraper
             chromeDriver.Quit();
         }
 
-        private static void GoToUrl(string url, int sleepTime = 3000)
+        private static void GoToUrl(string url, int sleepTime = 5000)
         {
             chromeDriver.Url = url;
 
