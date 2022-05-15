@@ -48,7 +48,14 @@ namespace IeeeXploreScraper
             }
             catch (Exception)
             {
-                return Convert.ToInt32(chromeDriver.FindElement(By.CssSelector("#LayoutWrapper > div > div > div > div.ng2-app > div > xpl-root > div > xpl-document-details > div > div.document-main.global-content-width-w-rr > section.document-main-header.row > div > xpl-document-header > section > div.document-header-inner-container.row > div > div > div.document-main-subheader > div.document-header-metrics-banner.row > div.document-banner.col.stats-document-banner > div.document-banner-metric-container.row > button > div.document-banner-metric-count")).Text);
+                try
+                {
+                    return Convert.ToInt32(chromeDriver.FindElement(By.CssSelector("#LayoutWrapper > div > div > div > div.ng2-app > div > xpl-root > div > xpl-document-details > div > div.document-main.global-content-width-w-rr > section.document-main-header.row > div > xpl-document-header > section > div.document-header-inner-container.row > div > div > div.document-main-subheader > div.document-header-metrics-banner.row > div.document-banner.col.stats-document-banner > div.document-banner-metric-container.row > button > div.document-banner-metric-count")).Text);
+                }
+                catch (Exception)
+                {
+                    return 0;
+                }
             }
         }
 
