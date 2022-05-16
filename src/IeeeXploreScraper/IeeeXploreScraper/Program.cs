@@ -14,6 +14,8 @@ namespace IeeeXploreScraper
 
         private static string[] lines;
 
+        private static int urlsRemaining = 100;
+
         private static void Main()
         {
             GetPath();
@@ -74,6 +76,10 @@ namespace IeeeXploreScraper
             chromeDriver.Url = url;
 
             Thread.Sleep(sleepTime);
+
+            urlsRemaining--;
+
+            Console.WriteLine(urlsRemaining);
         }
 
         private static void WriteDataToFile()
